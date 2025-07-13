@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import type{ Dispatch, FC, SetStateAction } from 'react';
 import styles from './styles.module.less';
 
 type Props = {

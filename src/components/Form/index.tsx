@@ -1,4 +1,4 @@
-import { FC, useState, FormEvent, useRef, ChangeEvent, useCallback } from 'react';
+import { type FC, useState, type FormEvent, useRef, type ChangeEvent, useCallback } from 'react';
 import dayjs from 'dayjs';
 import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../utils/firebaseConfig';
@@ -7,7 +7,7 @@ import CustomSelect from '../CustomSelect';
 import CustomCheckbox from '../CustomCheckbox';
 import CustomDatePicker from '../CustomDatePicker';
 import styles from './styles.module.less';
-import { HandleSubmitType, Todo } from './types';
+import { HandleSubmitType, type Todo } from './types';
 import { convertToDate } from '../../utils/functions';
 
 type Props = {

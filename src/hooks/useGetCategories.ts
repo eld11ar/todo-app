@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { query, collection, onSnapshot, orderBy } from 'firebase/firestore';
 import { db } from '../utils/firebaseConfig';
-import { Category } from '../context/types';
+import { type Category } from '../context/types';
 
 function useGetCategories() {
   const [categories, setCategories] = useState<Category[]>([]);

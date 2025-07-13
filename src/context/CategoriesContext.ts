@@ -1,4 +1,4 @@
-import { createContext, useContext, SetStateAction, Dispatch } from 'react';
+import { createContext, useContext, type SetStateAction, type Dispatch } from 'react';
 
 type CategoriesContextProps = {
   currentCategory: string;

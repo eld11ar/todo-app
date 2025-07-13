@@ -1,5 +1,5 @@
-import { Dispatch, FC, useState, memo, SetStateAction } from 'react';
-import { Datepicker } from 'bear-react-datepicker';
+import { type Dispatch, type FC, useState, memo, type SetStateAction } from 'react';
+// import { Datepicker } from 'bear-react-datepicker';
 import styles from './styles.module.less';
 
 type Props = {
@@ -23,7 +23,7 @@ const CustomDatePicker: FC<Props> = ({ date, setDate }) => {
         value={date}
         readOnly
       />
-      {
+      {/* {
         focus ?
           <Datepicker
             value={date}
@@ -33,7 +33,7 @@ const CustomDatePicker: FC<Props> = ({ date, setDate }) => {
             format='YYYY/MM/DD'
             className={styles.datePicker}
           /> : null
-      }
+      } */}
     </div>
   );
 };

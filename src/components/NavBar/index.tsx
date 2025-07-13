@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState, KeyboardEvent } from 'react';
+import { type ChangeEvent, type FC, useState, type KeyboardEvent } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../utils/firebaseConfig';
 import useGetCategories from '../../hooks/useGetCategories';

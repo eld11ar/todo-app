@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { query, collection, onSnapshot, where } from 'firebase/firestore';
-import { TodoReturnType } from '../components/Form/types';
+import { type TodoReturnType } from '../components/Form/types';
 import { db } from '../utils/firebaseConfig';
 
 function useGetTodos(param: string) {

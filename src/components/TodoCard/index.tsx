@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import dayjs from 'dayjs';
 import { convertToDate } from '../../utils/functions';
@@ -6,7 +6,7 @@ import { db } from '../../utils/firebaseConfig';
 import Trash from '../svgs/Trash';
 import CustomCheckbox from '../CustomCheckbox';
 import Modal from '../Modal/Modal';
-import { HandleSubmitType, TodoReturnType, Todo } from '../Form/types';
+import { HandleSubmitType, type TodoReturnType, type Todo } from '../Form/types';
 import Form from '../Form';
 import styles from './styles.module.less';
 import Spoiler from '../Spoiler';

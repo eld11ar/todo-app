@@ -1,8 +1,8 @@
-import { FC, MouseEvent } from 'react';
+import type { FC, MouseEvent } from 'react';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../utils/firebaseConfig';
 import { useCategoriesContext } from '../../context/CategoriesContext';
-import { Category } from '../../context/types';
+import type { Category } from '../../context/types';
 import Trash from '../svgs/Trash';
 import styles from './styles.module.less';
 

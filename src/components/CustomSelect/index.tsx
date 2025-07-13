@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, memo } from 'react';
+import {type Dispatch,type FC,type SetStateAction, memo } from 'react';
 import useGetCategories from '../../hooks/useGetCategories';
 import styles from './styles.module.less';
 

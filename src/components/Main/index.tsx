@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { type FC, useState } from 'react';
 import { useCategoriesContext } from '../../context/CategoriesContext';
 import useGetTodos from '../../hooks/useGetTodos';
 import CreateLink from '../CreateLink';
