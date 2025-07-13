@@ -1,29 +1,35 @@
-import { type Dispatch, type FC, useState, memo, type SetStateAction } from 'react';
+import {
+	type Dispatch,
+	type FC,
+	memo,
+	type SetStateAction,
+	useState,
+} from "react";
 // import { Datepicker } from 'bear-react-datepicker';
-import styles from './styles.module.less';
+import styles from "./styles.module.less";
 
 type Props = {
-  date: string;
-  setDate: Dispatch<SetStateAction<string>>;
+	date: string;
+	setDate: Dispatch<SetStateAction<string>>;
 };
 
 const CustomDatePicker: FC<Props> = ({ date, setDate }) => {
-  const [focus, setFocus] = useState<boolean>(false);
+	const [focus, setFocus] = useState<boolean>(false);
 
-  const handleSetDate = (time: string) => {
-    setDate(time);
-    setFocus(false);
-  };
+	const handleSetDate = (time: string) => {
+		setDate(time);
+		setFocus(false);
+	};
 
-  return (
-    <div className={styles.wrapper}>
-      <input
-        onFocus={() => setFocus(true)}
-        className={styles.input}
-        value={date}
-        readOnly
-      />
-      {/* {
+	return (
+		<div className={styles.wrapper}>
+			<input
+				onFocus={() => setFocus(true)}
+				className={styles.input}
+				value={date}
+				readOnly
+			/>
+			{/* {
         focus ?
           <Datepicker
             value={date}
@@ -34,8 +40,8 @@ const CustomDatePicker: FC<Props> = ({ date, setDate }) => {
             className={styles.datePicker}
           /> : null
       } */}
-    </div>
-  );
+		</div>
+	);
 };
 
 export default memo(CustomDatePicker);

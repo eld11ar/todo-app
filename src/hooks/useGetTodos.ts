@@ -1,39 +1,42 @@
-import { useEffect, useState } from 'react';
-import { query, collection, onSnapshot, where } from 'firebase/firestore';
-import { type TodoReturnType } from '../components/Form/types';
-import { db } from '../utils/firebaseConfig';
+import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import type { TodoReturnType } from "../components/Form/types";
+import { db } from "../utils/firebaseConfig";
 
 function useGetTodos(param: string) {
-  const [todos, setTodos] = useState<TodoReturnType[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [todos, setTodos] = useState<TodoReturnType[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    setIsLoading(true);
-    const todosQuery = query(collection(db, 'todo'), where('category', 'in', [param]));
+	useEffect(() => {
+		setIsLoading(true);
+		const todosQuery = query(
+			collection(db, "todo"),
+			where("category", "in", [param]),
+		);
 
-    const unsub = onSnapshot(
-      todosQuery,
-      (snapShot) => {
-        const todosList = [] as any;
+		const unsub = onSnapshot(
+			todosQuery,
+			(snapShot) => {
+				const todosList = [] as any;
 
-        snapShot.docs.forEach((doc) => {
-          todosList.push({ id: doc.id, ...doc.data() });
-        });
+				snapShot.docs.forEach((doc) => {
+					todosList.push({ id: doc.id, ...doc.data() });
+				});
 
-        setIsLoading(false);
-        setTodos(todosList);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+				setIsLoading(false);
+				setTodos(todosList);
+			},
+			(error) => {
+				console.log(error);
+			},
+		);
 
-    return () => {
-      unsub();
-    };
-  }, [param]);
+		return () => {
+			unsub();
+		};
+	}, [param]);
 
-  return { todos, isLoading };
+	return { todos, isLoading };
 }
 
 export default useGetTodos;
